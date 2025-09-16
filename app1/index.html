@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra Papel Tijera - Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAD//wAAKysrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEREREREREREREREREREREREAAAAAAAAREQEREREREBERAQAAAAAQEREBAAAAABAREQEBEAEQEBERAQEQARAQEREBARABEBAREQEBEAEQEBERAQAAAAAQEREBAAAAABAREQEREREREBERAAAAAAAAEREREREREREREREREREREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        rel="icon" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🪨📄✂️ Monitor del juego</h1>
+        </header>
+
+        <div id="waiting-screen" class="screen active">
+            <h2>esperando jugadores...</h2>
+            <p id="player-count">0 / 2 jugadores conectados</p>
+            <div id="connected-players"></div>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <div class="game-info">
+                <h2>ronda <span id="current-round">1</span></h2>
+                <button id="reset-btn">reiniciar juego</button>
+            </div>
+            
+            <div class="players-container">
+                <div class="player-card" id="player1-card">
+                    <h3 id="player1-name">jugador 1</h3>
+                    <div class="choice-display" id="player1-choice">?</div>
+                    <div class="score">puntaje: <span id="player1-score">0</span></div>
+                </div>
+                
+                <div class="vs">VS</div>
+                
+                <div class="player-card" id="player2-card">
+                    <h3 id="player2-name">jugador 2</h3>
+                    <div class="choice-display" id="player2-choice">?</div>
+                    <div class="score">puntaje: <span id="player2-score">0</span></div>
+                </div>
+            </div>
+            
+            <div id="result-display" class="result-display"></div>
+        </div>
+
+        <div id="game-over-screen" class="screen">
+            <h2>juego terminado!</h2>
+            <p id="winner-display"></p>
+            <button id="new-game-btn">nuevo juego</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors - Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAD//wAAKysrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEREREREREREREREREREREREAAAAAAAAREQEREREREBERAQAAAAAQEREBAAAAABAREQEBEAEQEBERAQEQARAQEREBARABEBAREQEBEAEQEBERAQAAAAAQEREBAAAAABAREQEREREREBERAAAAAAAAEREREREREREREREREREREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        rel="icon" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🪨📄✂️ Player</h1>
+        </header>
+
+        <div id="join-screen" class="screen active">
+            <h2>Join Game</h2>
+            <div class="input-group">
+                <input type="text" id="player-name" placeholder="Enter your name" maxlength="15">
+                <button id="join-btn">Join Game</button>
+            </div>
+            <p id="join-message"></p>
+        </div>
+
+        <div id="waiting-screen" class="screen">
+            <h2>Waiting for opponent...</h2>
+            <p id="waiting-message">You have successfully joined the game!</p>
+            <div class="loading">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <div class="game-info">
+                <h2>Round <span id="current-round">1</span></h2>
+                <p id="player-info">You are: <span id="your-name"></span></p>
+            </div>
+            
+            <div id="choice-section" class="choice-section">
+                <h3>Make your choice:</h3>
+                <div class="choices">
+                    <button class="choice-btn" data-choice="rock">
+                        <span class="choice-emoji">🪨</span>
+                        <span class="choice-name">Rock</span>
+                    </button>
+                    <button class="choice-btn" data-choice="paper">
+                        <span class="choice-emoji">📄</span>
+                        <span class="choice-name">Paper</span>
+                    </button>
+                    <button class="choice-btn" data-choice="scissors">
+                        <span class="choice-emoji">✂️</span>
+                        <span class="choice-name">Scissors</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="waiting-choice" class="waiting-choice" style="display: none;">
+                <h3>Choice submitted!</h3>
+                <p>Your choice: <span id="your-choice"></span></p>
+                <p>Waiting for opponent...</p>
+            </div>
+
+            <div id="round-result" class="round-result" style="display: none;">
+                <h3 id="result-title">Round Result</h3>
+                <div class="result-choices">
+                    <div class="result-choice">
+                        <p>You chose:</p>
+                        <span id="your-result-choice" class="result-emoji"></span>
+                    </div>
+                    <div class="vs-result">VS</div>
+                    <div class="result-choice">
+                        <p>Opponent chose:</p>
+                        <span id="opponent-result-choice" class="result-emoji"></span>
+                    </div>
+                </div>
+                <p id="round-winner"></p>
+                <div class="scores">
+                    <p>Your score: <span id="your-score">0</span></p>
+                    <p>Opponent score: <span id="opponent-score">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-over-screen" class="screen">
+            <h2 id="game-result">Game Over!</h2>
+            <p id="final-result"></p>
+            <div class="final-scores">
+                <p>Final Score:</p>
+                <p>You: <span id="final-your-score">0</span></p>
+                <p>Opponent: <span id="final-opponent-score">0</span></p>
+            </div>
+            <button id="play-again-btn">Wait for New Game</button>
+        </div>
+
+        <div id="disconnected-screen" class="screen">
+            <h2>Disconnected</h2>
+            <p>You have been disconnected from the game.</p>
+            <button id="reconnect-btn">Reconnect</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

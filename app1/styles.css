@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f5f5f0;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: #6b5b73;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.screen {
+    display: none;
+    text-align: center;
+}
+
+.screen.active {
+    display: block;
+}
+
+#waiting-screen h2 {
+    color: #8d7b68;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+#player-count {
+    font-size: 1.2rem;
+    color: #a0937d;
+    margin-bottom: 30px;
+}
+
+#connected-players {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.connected-player {
+    background-color: #e8e2d4;
+    padding: 15px 25px;
+    border-radius: 8px;
+    border: 1px solid #d4c4a8;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.game-info h2 {
+    color: #8d7b68;
+    font-weight: 400;
+}
+
+#reset-btn, #new-game-btn {
+    background-color: #a0937d;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+#reset-btn:hover, #new-game-btn:hover {
+    background-color: #8d7b68;
+}
+
+.players-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 0;
+    gap: 40px;
+}
+
+.player-card {
+    background-color: #e8e2d4;
+    border: 2px solid #d4c4a8;
+    border-radius: 12px;
+    padding: 30px;
+    min-width: 250px;
+    transition: all 0.3s ease;
+}
+
+.player-card.winner {
+    border-color: #a0937d;
+    background-color: #f0ede7;
+}
+
+.player-card h3 {
+    color: #6b5b73;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.choice-display {
+    font-size: 4rem;
+    margin: 20px 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f0;
+    border-radius: 8px;
+    border: 1px solid #d4c4a8;
+}
+
+.choice-display.waiting {
+    color: #a0937d;
+}
+
+.score {
+    font-size: 1.2rem;
+    color: #8d7b68;
+    font-weight: 500;
+}
+
+.vs {
+    font-size: 2rem;
+    color: #a0937d;
+    font-weight: 300;
+}
+
+.result-display {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e8e2d4;
+    border-radius: 8px;
+    border: 1px solid #d4c4a8;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #6b5b73;
+}
+
+#game-over-screen h2 {
+    color: #8d7b68;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+#winner-display {
+    font-size: 1.5rem;
+    color: #6b5b73;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .players-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .player-card {
+        min-width: 200px;
+    }
+    
+    .vs {
+        transform: rotate(90deg);
+    }
+    
+    .game-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
